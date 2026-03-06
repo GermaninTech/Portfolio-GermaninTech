@@ -4,7 +4,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   // Aquí definimos la URL principal de tu web. 
   // Cuando tengas tu dominio real (ej: germanintech.vercel.app), cámbialo aquí.
-  const baseUrl = 'https://Portfolio-GermaninTech.vercel.app'; 
+  const baseUrl = 'https://Portfolio-Germanin-Tech.vercel.app'; 
 
   return [
     {
