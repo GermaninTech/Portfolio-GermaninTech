@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import "./globals.css";
-import CustomCursor from "@/app/components/CustomCursor"; // Importa el cursor
+import CustomCursor from "@/app/components/CustomCursor";
+import ScrollProgress from "@/app/components/ScrollProgress"; // Importamos la barra
 
 export const metadata: Metadata = {
   title: "GermaninTech | Portfolio",
@@ -12,12 +13,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className="bg-gray-950 text-white antialiased selection:bg-emerald-500/30 cursor-none"> {/* Añadido cursor-none */}
+      {/* Añadimos scroll-smooth aquí para asegurar que los enlaces 
+        internos (#proyectos, etc.) se desplacen suavemente.
+      */}
+      <body className="bg-gray-950 text-white antialiased selection:bg-emerald-500/30 cursor-none scroll-smooth">
         <ThemeProvider 
           attribute="class" 
           defaultTheme="dark" 
           forcedTheme="dark"
         >
+          {/* Componentes visuales globales */}
+          <ScrollProgress />
+          <CustomCursor />
+          
           <main className="min-h-screen">
             {children}
           </main>
@@ -34,7 +42,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}
           />
         </ThemeProvider>
-        <CustomCursor /> {/* Añade el CustomCursor aquí */}
       </body>
     </html>
   );
