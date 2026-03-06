@@ -1,69 +1,65 @@
 @import "tailwindcss";
 
+/* 1. Definición de variables CSS */
 :root {
-  /* Configuración para Modo Claro (por si alguien lo usa) */
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary-green: #10b981; /* Esmeralda 500 */
-}
-
-/* Forzamos el Modo Oscuro como base o por preferencia */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050505; /* Un negro más profundo */
-    --foreground: #ededed;
-  }
-}
-
-/* Si usas la librería next-themes, esto asegura que el tema oscuro se aplique bien */
-.dark {
   --background: #050505;
   --foreground: #ededed;
+  --primary: #10b981; /* Esmeralda 500 */
 }
 
-@theme inline {
+/* 2. Configuración del Tema (Tailwind v4) */
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary-green);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  
+  /* Esto evita que los tipos de letra Geist den error si no están instalados */
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* 3. Base del documento */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Ajuste para que el scroll no tape el Navbar al navegar */
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
+  /* Mejorar suavidad de fuentes */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- MEJORAS DE DISEÑO PROFESIONAL --- */
-
-/* 1. Scrollbar Estilo "Hacker Verde" */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #10b981;
-  border-radius: 10px;
-  border: 2px solid #0a0a0a;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #34d399; /* Un verde más brillante al pasar el ratón */
-}
-
-/* 2. Selección de texto en verde */
+/* 4. Estilos de Selección */
 ::selection {
   background-color: rgba(16, 185, 129, 0.3);
   color: #10b981;
 }
 
-/* 3. Suavizado de scroll para la navegación */
-html {
-  scroll-behavior: smooth;
+/* 5. Scrollbar Estilo "Hacker Verde" */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px; /* Un poco menos redondeado se ve más "tecno" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #34d399;
+}
+
+/* 6. Utilidad de seguridad: Evitar que imágenes se desborden en móviles */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
