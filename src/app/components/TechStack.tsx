@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 
 const stack = [
-  { category: "Backend & Lenguajes", skills: ["Python", "PHP", "Node.js", "SQL", "Kotlin", "C#", "C++"] },
-  { category: "Frontend & Diseño", skills: ["HTML", "CSS", "React", "Next.js", "TailwindCSS", "Flutter"] }
+  { category: "Backend & Lenguajes", skills: ["Python", "PHP", "Node.js", "SQL", "Kotlin", "C#", "C++","Javascript"] },
+  { category: "Frontend & Diseño", skills: ["HTML", "CSS", "React", "Next.js", "TailwindCSS", "Flutter","Bootstrap"] }
 ];
 
 export default function TechStack() {
