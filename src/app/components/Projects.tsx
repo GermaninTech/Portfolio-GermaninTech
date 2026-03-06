@@ -2,32 +2,25 @@
 import { motion } from "framer-motion";
 
 const projects = [
-  { title: "Ktor Secure API", desc: "Backend robusto con Kotlin.", tags: ["Ktor", "Kotlin"] },
-  { title: "Green Portfolio", desc: "Diseño optimizado en verde.", tags: ["Next.js", "Tailwind"] },
+  { title: "Proyecto Alpha", desc: "Backend Ktor + Ngrok Tunnel", col: "md:col-span-2" },
+  { title: "Proyecto Beta", desc: "Next.js Portfolio", col: "md:col-span-1" },
+  { title: "Proyecto Gamma", desc: "Sistema de Auth", col: "md:col-span-1" },
+  { title: "Proyecto Delta", desc: "Dashboard Visual", col: "md:col-span-2" },
 ];
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-20 px-6 max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-8">
-        {projects.map((project, i) => (
-          <motion.div 
+    <section id="proyectos" className="py-20 px-4 max-w-6xl mx-auto">
+      <h2 className="text-4xl font-black text-center mb-12">Proyectos Destacados</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {projects.map((p, i) => (
+          <motion.div
             key={i}
-            whileHover={{ y: -10 }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.2 }}
-            className="p-8 bg-gray-900/50 border border-emerald-500/10 rounded-3xl hover:border-emerald-500/50 transition-all cursor-default group"
+            whileHover={{ scale: 1.02 }}
+            className={`${p.col} p-8 rounded-3xl bg-gray-900/40 border border-gray-800 hover:border-emerald-500/50 transition-all cursor-pointer`}
           >
-            <div className="w-12 h-1 bg-emerald-500 mb-6 group-hover:w-full transition-all duration-500" />
-            <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-400">{project.title}</h3>
-            <p className="text-gray-400 mb-6">{project.desc}</p>
-            <div className="flex gap-2">
-              {project.tags.map(tag => (
-                <span key={tag} className="text-xs font-bold text-emerald-500 uppercase tracking-widest">{tag}</span>
-              ))}
-            </div>
+            <h3 className="text-xl font-bold">{p.title}</h3>
+            <p className="text-emerald-400 text-sm mt-2">{p.desc}</p>
           </motion.div>
         ))}
       </div>

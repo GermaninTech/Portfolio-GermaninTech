@@ -3,14 +3,21 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <motion.section 
-      initial={{ opacity: 0, y: 20 }} 
-      whileInView={{ opacity: 1, y: 0 }} 
-      viewport={{ once: true }}
-      className="py-20 max-w-4xl mx-auto px-4 text-center"
-    >
-      <h2 className="text-3xl font-bold mb-4">Sobre Mí</h2>
-      <p className="text-gray-400">Desarrollador enfocado en soluciones eficientes y escalables.</p>
-    </motion.section>
+    <section id="sobre-mi" className="py-20 px-4 max-w-6xl mx-auto">
+      <h2 className="text-4xl font-black text-center mb-12">Sobre mí</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[400px]">
+        {/* Tarjeta Principal */}
+        <motion.div className="md:col-span-2 p-8 rounded-3xl bg-gray-900/40 border border-gray-800 backdrop-blur-xl flex flex-col justify-center">
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">GermaninTech</h3>
+          <p className="text-gray-400 leading-relaxed text-lg">
+            Soy un desarrollador apasionado por crear sistemas eficientes. Mi enfoque combina la robustez del Backend con interfaces minimalistas y modernas.
+          </p>
+        </motion.div>
+        {/* Tarjeta Secundaria */}
+        <div className="p-8 rounded-3xl bg-gray-900/40 border border-gray-800 backdrop-blur-xl flex items-center justify-center">
+          <p className="text-gray-500 font-mono text-center">Basado en <br/><span className="text-white text-xl">Andorra</span></p>
+        </div>
+      </div>
+    </section>
   );
 }
