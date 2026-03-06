@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor"; // Importa el cursor
+import CustomCursor from "@/app/components/CustomCursor"; // Importa el cursor
 
 export const metadata: Metadata = {
   title: "GermaninTech | Portfolio",
