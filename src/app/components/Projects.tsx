@@ -31,9 +31,6 @@ export default function Projects() {
             <span className="text-emerald-400 font-mono text-sm block mb-4">{p.desc}</span>
             <p className="text-gray-400 leading-relaxed">{p.details}</p>
             <div className="mt-6">
-              <a href="#" className="text-sm border-b border-transparent hover:border-emerald-500 transition-colors">
-                Ver repositorio →
-              </a>
             </div>
           </motion.div>
         ))}
