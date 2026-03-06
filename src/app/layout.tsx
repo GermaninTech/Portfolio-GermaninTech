@@ -1,9 +1,9 @@
-import type { Metadata } from "next"; // Importamos el tipo para mayor seguridad
+import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor"; // Importa el cursor
 
-// Definimos metadata con el tipo correcto
 export const metadata: Metadata = {
   title: "GermaninTech | Portfolio",
   description: "Desarrollador Backend & Frontend especializado en sistemas robustos.",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className="bg-gray-950 text-white antialiased selection:bg-emerald-500/30">
+      <body className="bg-gray-950 text-white antialiased selection:bg-emerald-500/30 cursor-none"> {/* Añadido cursor-none */}
         <ThemeProvider 
           attribute="class" 
           defaultTheme="dark" 
@@ -34,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}
           />
         </ThemeProvider>
+        <CustomCursor /> {/* Añade el CustomCursor aquí */}
       </body>
     </html>
   );
