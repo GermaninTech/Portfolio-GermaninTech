@@ -26,7 +26,7 @@ export default function Hero() {
           transition={{ delay: 0.5 }}
           className="mt-6 text-base md:text-xl text-gray-400 max-w-lg mx-auto px-2"
         >
-          Todo lo que tengas en <span className="text-emerald-400 font-mono">Mente</span> y <span className="text-emerald-400 font-mono">Lo puedo Construir</span>.
+          Todo lo que tengas en <span className="text-emerald-400 font-mono">Mente</span> lo Puedo <span className="text-emerald-400 font-mono"> Construir</span>.
         </motion.p>
 
         <motion.div className="mt-10 flex gap-4 justify-center">
